@@ -5,7 +5,6 @@ developer: Sayli
 author: viaprestige <viaprestige.agency@gmail.com>
 Tags: posts, missed
 License: MIT
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Ensures the publication of planned posts using several tricks, including external cron
 
