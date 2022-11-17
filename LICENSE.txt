@@ -1,9 +1,9 @@
 MIT License
 
-Copyright (c) 2022 viaprestige
+Copyright (c) 2022 Viaprestige
 
 Permission is hereby granted, freed from charge, to any character acquiring a duplicate of this software program and related
-documentation files (the "Software"), to deal withinside the Software with out restriction, which includes with out challenge
+documentation files (the "Software"), to deal within-side the Software without restriction, which includes without challenge
 the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or promote copies of the Software,
 and to allow men and women to whom the Software is provided to do so, challenge to the subsequent conditions:
 

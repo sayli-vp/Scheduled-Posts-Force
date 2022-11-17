@@ -3,21 +3,16 @@
 /**
  * @link       https://viaprestige-agency.com
  * @since      1.0.0
- *
- * @package    Scheduled_Posts_Force
- * @subpackage Scheduled_Posts_Force/includes
- */
-
-use services\ExternalTriggerService;
-use services\ScheduledPostsService;
-
-/**
- * @since      1.0.0
  * @package    Scheduled_Posts_Force
  * @subpackage Scheduled_Posts_Force/includes
  * @developer  Sayli
  * @author     viaprestige <viaprestige.agency@gmail.com>
  */
+
+use services\ExternalTriggerService;
+use services\ScheduledPostsService;
+
+
 class Scheduled_Posts_Force
 {
 

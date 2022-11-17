@@ -3,23 +3,17 @@
 /**
  * @link       https://viaprestige-agency.com
  * @since      1.0.0
- *
- * @package    Scheduled_Posts_Force
- * @subpackage Scheduled_Posts_Force/includes
- */
-
-/**
  * @package    Scheduled_Posts_Force
  * @subpackage Scheduled_Posts_Force/includes
  * @developer  Sayli
  * @author     viaprestige <viaprestige.agency@gmail.com>
  */
+
 class Scheduled_Posts_Force_Loader
 {
 
     protected $actions;
     protected $filters;
-
     protected $shortcodes;
 
     public function __construct()
