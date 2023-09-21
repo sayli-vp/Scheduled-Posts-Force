@@ -1,11 +1,10 @@
 === Scheduled Posts Force ===
-version: 1.0.0
+version: 1.0.1
 package: Scheduled-Posts-Force
 description: Ensures the publication of planned posts using several tricks, including external cron
 developer: Sayli
 author: viaprestige <viaprestige.agency@gmail.com>
 Tags: posts, missed
-License: MIT
 
 
 == Description ==
@@ -17,6 +16,6 @@ This plugin will automatically publish the publication at the right time, night 
 (optional service)
 If using the cloudflare cache or if you want to be sure that your articles are published on time
 You only need to activate the plugin services by the URL generated:
-https://your-website.com/scheduled-posts-force?publish_missed_future_posts=true
+https://your-website.com/scheduled-posts-force
 We put it in the server’s cron file or a tool like https://console.cron-job.org/
 

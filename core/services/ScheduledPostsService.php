@@ -8,9 +8,9 @@
  * @author     viaprestige <viaprestige.agency@gmail.com>
  */
 
-namespace services;
+namespace scheduledpostsforce\core\services;
 
-use Scheduled_Posts_Force_Loader;
+use scheduledpostsforce\core\Scheduled_Posts_Force_Loader;
 use WP_Query;
 
 class ScheduledPostsService extends BaseService
@@ -24,28 +24,31 @@ class ScheduledPostsService extends BaseService
 
     public static function publish_missed_posts($return_response = false)
     {
-        $data['missed_posts_length'] = 0;
-        $data['response'] = 'WordPress Query object not running';
+        $data = [
+            'missed_posts_length' => 0,
+            'response' => 'WordPress Query object not running',
+        ];
         try {
-            if (is_front_page() || is_single()) {
-                $now = time();
-                $posts = new WP_Query(array(
-                    'post_status' => 'future',
-                    'post_type' => 'post',
-                ));
-                $posts = $posts->get_posts();
-                foreach ($posts as $post) {
+            $now = time();
+            $posts = new WP_Query([
+                'post_status' => 'future',
+                'post_type' => 'post',
+                'posts_per_page' => 10,
+            ]);
+            if ($posts->have_posts()) {
+                foreach ($posts->posts as $post) {
                     $post_time = strtotime($post->post_date_gmt);
                     if ($post_time < $now) {
                         wp_publish_post($post->ID);
                         $data['missed_posts_length']++;
                     }
                 }
-                $data['response'] = 'process executed';
             }
+            $data['response'] = 'Process executed';
         } catch (\Exception $exception) {
             $data['response'] = $exception->getMessage();
         }
+
         return ($return_response) ? $data : true;
     }
 

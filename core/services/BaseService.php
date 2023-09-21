@@ -7,9 +7,10 @@
  * @author     viaprestige <viaprestige.agency@gmail.com>
  */
 
-namespace services;
+namespace scheduledpostsforce\core\services;
 
-use Scheduled_Posts_Force_Loader;
+
+use scheduledpostsforce\core\Scheduled_Posts_Force_Loader;
 
 class BaseService
 {

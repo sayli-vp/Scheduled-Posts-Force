@@ -9,9 +9,11 @@
  * @author     viaprestige <viaprestige.agency@gmail.com>
  */
 
-use services\ExternalTriggerService;
-use services\ScheduledPostsService;
+namespace scheduledpostsforce\core;
 
+
+use scheduledpostsforce\core\services\ExternalTriggerService;
+use scheduledpostsforce\core\services\ScheduledPostsService;
 
 class Scheduled_Posts_Force
 {
@@ -23,22 +25,23 @@ class Scheduled_Posts_Force
 
     public function __construct()
     {
-        if (defined('SCHEDULED_POSTS_FORCE_VERSION')) {
+        if (defined('SCHEDULED_POSTS_FORCE_VERSION') && defined('SCHEDULED_POSTS_FORCE_PLUGIN_NAME')) {
             $this->version = SCHEDULED_POSTS_FORCE_VERSION;
+            $this->plugin_name = SCHEDULED_POSTS_FORCE_PLUGIN_NAME;
         } else {
-            $this->version = '1.0.0';
+            $this->version = '1.0.1';
+            $this->plugin_name = 'scheduled-posts-force';
         }
-        $this->plugin_name = 'scheduled-posts-force';
         $this->load_dependencies();
     }
 
 
     private function load_dependencies()
     {
-        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/Scheduled_Posts_Force_Loader.php';
-        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/services/BaseService.php';
-        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/services/ScheduledPostsService.php';
-        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/services/ExternalTriggerService.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'core/Scheduled_Posts_Force_Loader.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'core/services/BaseService.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'core/services/ScheduledPostsService.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'core/services/ExternalTriggerService.php';
         $this->loader = new Scheduled_Posts_Force_Loader();
         $this->load_services();
 

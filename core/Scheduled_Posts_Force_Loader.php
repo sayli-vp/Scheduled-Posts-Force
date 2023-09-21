@@ -9,6 +9,9 @@
  * @author     viaprestige <viaprestige.agency@gmail.com>
  */
 
+namespace scheduledpostsforce\core;
+
+
 class Scheduled_Posts_Force_Loader
 {
 
